@@ -6,3 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+categories = { :practice => "Practice / Craft / Methodology",
+      :language => "Language",
+      :tools => "Tools / Gadgets",
+      :platform => "Platform / Library / API" }
+
+categories.each do |slug, name|
+  Category.create! :slug => slug, :name => name
+end

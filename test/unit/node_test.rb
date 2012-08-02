@@ -11,6 +11,7 @@ class NodeTest < ActiveSupport::TestCase
     node = Node.new :name => "Backbone", :category => Category::PLATFORM
     node.save
     node_in_db = Node.find_by_name "Backbone"
+    assert node_in_db.category
     assert_equal Category::PLATFORM, node_in_db.category
   end
 
