@@ -1,5 +1,5 @@
 class Node < ActiveRecord::Base
-  attr_accessible :name, :content
+  attr_accessible :name, :content, :category
 
   has_and_belongs_to_many :nodes,
                           :class_name => "Node",
@@ -12,4 +12,6 @@ class Node < ActiveRecord::Base
                           :join_table => "nodes_nodes",
                           :foreign_key => "to_id",
                           :association_foreign_key => "from_id"
+
+  belongs_to :category
 end
