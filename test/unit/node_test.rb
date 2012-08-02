@@ -14,4 +14,12 @@ class NodeTest < ActiveSupport::TestCase
     parent.save
     assert_equal 1, parent.nodes.size
   end
+
+  def test_setup_association_in_nodes_and_traverse_reverse
+    parent, child = Node.new, Node.new
+    [parent, child].each(&:save)
+    parent.nodes << child
+    parent.save
+    assert_equal parent, child.parent_nodes.first
+  end
 end
