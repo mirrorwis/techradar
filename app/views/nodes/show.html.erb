@@ -12,6 +12,12 @@
   <%= markdown @node.content %>
 </div>
 
+<div>
+  <% @node.links.each do |link| %>
+    <a href="<%= link.url %>" target="_blank"><%= link.title %></a>
+  <% end %>
+</div>
+
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               nodes_path, :class => 'btn'  %>

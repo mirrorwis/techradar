@@ -15,6 +15,14 @@
       <%= f.text_area :content, :class => 'text_area' %>
     </div>
   </div>
+  <div class="field">
+    <% f.fields_for :links do |builder| %>
+      <%= render "link_fields", :f => builder %>
+    <% end %>
+  </div>
+
+  <p><%= link_to_add_fields "Add Link", f, :links %></p>
+
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

@@ -1,5 +1,5 @@
 class Node < ActiveRecord::Base
-  attr_accessible :name, :content, :category, :category_id
+  attr_accessible :name, :content, :category, :category_id, :links_attributes
 
   has_and_belongs_to_many :nodes,
                           :class_name => "Node",
@@ -15,4 +15,6 @@ class Node < ActiveRecord::Base
 
   belongs_to :category
   has_many :links
+
+  accepts_nested_attributes_for :links
 end
