@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120802035906) do
+ActiveRecord::Schema.define(:version => 20120802041837) do
 
   create_table "links", :force => true do |t|
     t.text     "title"
@@ -25,5 +25,13 @@ ActiveRecord::Schema.define(:version => 20120802035906) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "nodes_nodes", :id => false, :force => true do |t|
+    t.integer "from_id"
+    t.integer "to_id"
+  end
+
+  add_index "nodes_nodes", ["from_id"], :name => "index_nodes_nodes_on_from_id"
+  add_index "nodes_nodes", ["to_id"], :name => "index_nodes_nodes_on_to_id"
 
 end
