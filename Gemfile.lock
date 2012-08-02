@@ -70,6 +70,7 @@ GEM
     multi_json (1.3.6)
     mysql2 (0.3.11)
     polyglot (0.3.3)
+    pygmentize (0.0.3)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -95,6 +96,7 @@ GEM
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
+    redcarpet (2.1.1)
     sass (3.1.20)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
@@ -129,7 +131,9 @@ DEPENDENCIES
   debugger
   jquery-rails
   mysql2
+  pygmentize
   rails (= 3.2.7)
+  redcarpet
   sass-rails (~> 3.2.3)
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
