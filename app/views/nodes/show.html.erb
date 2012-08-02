@@ -1,3 +1,5 @@
 <h1><%= @node.name %></h1>
 <div><%= @node.category.name %></div>
 <div><%= markdown @node.content %></div>
+
+<%= link_to 'Edit', edit_node_path(@node) %>
