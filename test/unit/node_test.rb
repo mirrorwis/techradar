@@ -30,4 +30,15 @@ class NodeTest < ActiveSupport::TestCase
     parent.save
     assert_equal parent, child.parent_nodes.first
   end
+
+  def test_should_able_to_add_links_to_node
+    node = Node.create :name => "Mockito", :category => Category::TOOLS
+    node.links << Link.create!(:title => "Mockito", :url => "http://www.mockito.org")
+
+    node.save
+    node.reload
+
+    assert_equal 1, node.links.size
+    assert_equal "Mockito", node.links.first.title
+  end
 end

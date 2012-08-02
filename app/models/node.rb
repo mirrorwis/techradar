@@ -14,4 +14,5 @@ class Node < ActiveRecord::Base
                           :association_foreign_key => "from_id"
 
   belongs_to :category
+  has_many :links
 end
