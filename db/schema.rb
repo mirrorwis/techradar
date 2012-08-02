@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120802041837) do
+ActiveRecord::Schema.define(:version => 20120802060717) do
 
   create_table "links", :force => true do |t|
     t.text     "title"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20120802041837) do
     t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.text     "name"
   end
 
   create_table "nodes_nodes", :id => false, :force => true do |t|

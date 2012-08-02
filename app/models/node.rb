@@ -1,5 +1,6 @@
 class Node < ActiveRecord::Base
-  attr_accessible :content
+  attr_accessible :name, :content
+
   has_and_belongs_to_many :nodes,
                           :class_name => "Node",
                           :join_table => "nodes_nodes",
