@@ -2,6 +2,21 @@ class NodesController < ApplicationController
 
   def index
     @nodes = Node.all
+    respond_to do |format|
+      format.html { render :index }
+      format.json {
+        json = []
+        @nodes.each do |node|
+          json << {
+            :url => node_url(node),
+            :name => node.name,
+            :hottness => node.hotness.nil?? "" : node.hotness,
+            :category => node.category.name
+          }
+        end
+        render :json => json.to_json
+      }
+    end
   end
 
   def show
@@ -12,7 +27,6 @@ class NodesController < ApplicationController
       flash[:notice] = "#{params[:id]} doesn't exist, so create new one"
       render :action => :new
     end
-
   end
 
   def new
