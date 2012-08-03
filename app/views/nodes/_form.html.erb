@@ -7,9 +7,11 @@
 
   <div class="field">
     Hottness Value
-    &nbsp; <%= f.range_field :hotness,  :min =>  0, :max => 400 %>
+    &nbsp; <%= f.range_field :hotness,  :min =>  0, :max => 399 %>
     <button class="btn btn-mini" onclick="$('.whats-hotness-value').toggle();return false;" style="margin-left: 1em;">What's hotness?</button>
   </div>
+
+  <div class="field" id="hotness-status"></div>
 
   <div class="whats-hotness-value" style="display: none;">
     <p>The rings are:</p>
