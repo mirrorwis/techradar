@@ -41,13 +41,13 @@ ActiveRecord::Schema.define(:version => 20120803070020) do
 
   create_table "nodes", :force => true do |t|
     t.text     "content"
-    t.datetime "created_at",                                :null => false
-    t.datetime "updated_at",                                :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.text     "name"
     t.integer  "category_id"
     t.string   "slug"
     t.string   "tags"
-    t.decimal  "hotness",     :precision => 2, :scale => 2
+    t.integer  "hotness"
   end
 
   add_index "nodes", ["slug"], :name => "index_nodes_on_slug"
