@@ -24,10 +24,8 @@
 </div>
 
 <div class="field">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              nodes_path, :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_node_path(@node), :class => 'btn' %>
+              edit_node_path(@node), :class => 'btn btn-success' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               node_path(@node),
               :method => 'delete',

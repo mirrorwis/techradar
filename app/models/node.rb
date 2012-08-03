@@ -3,7 +3,7 @@ class Node < ActiveRecord::Base
   include Markdown
   friendly_id :name, use: :slugged
 
-  attr_accessible :name, :content, :category, :category_id, :links_attributes, :tags
+  attr_accessible :name, :content, :category, :category_id, :links_attributes, :tags, :hotness
 
   has_and_belongs_to_many :nodes,
                           :class_name => "Node",

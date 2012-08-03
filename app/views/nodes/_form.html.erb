@@ -4,6 +4,23 @@
       <%= f.select :category_id, options_from_collection_for_select(@categories, :id, :name) %>
     </div>
   </div>
+
+  <div class="field">
+    Hottness Value
+    &nbsp; <%= f.range_field :hotness,  :min =>  0, :max => 400 %>
+    <button class="btn btn-mini" onclick="$('.whats-hotness-value').toggle();return false;" style="margin-left: 1em;">What's hotness?</button>
+  </div>
+
+  <div class="whats-hotness-value" style="display: none;">
+    <p>The rings are:</p>
+    <ol>
+      <li><strong>Hold:</strong> Proceed with caution.</li>
+      <li><strong>Assess:</strong> Worth exploring with the goal of understanding how it will affect your enterprise.</li>
+      <li><strong>Trial:</strong> Worth pursuing. It is important to understand how to build up this capability. Enterprises should try this technology on a project that can handle the risk.</li>
+      <li><strong>Adopt:</strong> We feel strongly that the industry should be adopting these items. We use them when appropriate on our projects.</li>
+    </ol>
+  </div>
+
   <div class="page-header">
     <h1>
       <%= f.text_field :name, :class => ".title span11", :placeholder => "Name of the buzz you want to share" %>
