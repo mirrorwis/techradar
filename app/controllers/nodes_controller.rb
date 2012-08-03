@@ -5,7 +5,7 @@ class NodesController < ApplicationController
   end
 
   def show
-    @node = Node.find_by_id(params[:id])
+    @node = Node.find(params[:id])
   end
 
   def new

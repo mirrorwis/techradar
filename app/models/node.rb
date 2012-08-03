@@ -1,5 +1,6 @@
 class Node < ActiveRecord::Base
   extend FriendlyId
+  include Markdown
   friendly_id :name, use: :slugged
 
   attr_accessible :name, :content, :category, :category_id, :links_attributes
@@ -20,4 +21,10 @@ class Node < ActiveRecord::Base
   has_many :links
 
   accepts_nested_attributes_for :links
+
+  def summary
+    html = markdown(self.content)
+    document = Nokogiri::HTML.parse html
+    document.text.truncate(200)
+  end
 end
