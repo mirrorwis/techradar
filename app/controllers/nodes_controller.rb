@@ -5,7 +5,13 @@ class NodesController < ApplicationController
   end
 
   def show
-    @node = Node.find(params[:id])
+    @node = Node.find(params[:id]) || Node.find_by_name(params[:id]) rescue nil
+    unless @node
+      @node = Node.new :name => params[:id]
+      @categories = Category.all
+      render :action => :new
+    end
+
   end
 
   def new

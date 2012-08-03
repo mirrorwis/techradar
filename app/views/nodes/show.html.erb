@@ -1,24 +1,29 @@
+<div class="field">
+  <%= @node.category.name %>
+</div>
+
 <div class="page-header">
   <h1><%=t '.title', :default => @node.name %></h1>
 </div>
 
-<div>
-  <%= @node.category.name %>
+<div class="field">
+  <span>Tags: </span>
+  <% @node.tags.split(",").each do |tag|%>
+    <%= link_to tag, node_path(tag.strip) %>
+  <% end unless @node.tags.nil? %>
 </div>
 
-<br/>
-
-<div>
+<div class="field">
   <%= markdown @node.content %>
 </div>
 
-<div>
+<div class="field">
   <% @node.links.each do |link| %>
     <a href="<%= link.url %>" target="_blank"><%= link.title %></a>
   <% end %>
 </div>
 
-<div class="form-actions">
+<div class="field">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               nodes_path, :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),

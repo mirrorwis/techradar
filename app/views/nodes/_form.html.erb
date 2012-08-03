@@ -6,8 +6,14 @@
   </div>
   <div class="page-header">
     <h1>
-      <%= f.text_field :name, :class => ".title span11", :placeholder => "name of the buzz you want to share" %>
+      <%= f.text_field :name, :class => ".title span11", :placeholder => "Name of the buzz you want to share" %>
     </h1>
+  </div>
+
+  <div class="field">
+    <div>
+      <%= f.text_field :tags, :class => ".title span11", :placeholder => "Tags of the buzz. Seperated by comma, say Android, Java" %>
+    </div>
   </div>
 
   <div class="field">
