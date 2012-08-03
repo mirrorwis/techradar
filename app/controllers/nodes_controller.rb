@@ -9,6 +9,7 @@ class NodesController < ApplicationController
     unless @node
       @node = Node.new :name => params[:id]
       @categories = Category.all
+      flash[:notice] = "#{params[:id]} doesn't exist, so create new one"
       render :action => :new
     end
 
