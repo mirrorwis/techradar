@@ -24,6 +24,7 @@ gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 gem 'redcarpet'
 gem 'pygmentize'
+gem "friendly_id", "~> 4.0.1"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,4 +1,7 @@
 class Node < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   attr_accessible :name, :content, :category, :category_id, :links_attributes
 
   has_and_belongs_to_many :nodes,
