@@ -1,18 +1,18 @@
 <%= form_for @node, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="page-header">
-    <h1>
-      <%= f.text_field :name, :class => ".title" %>
-    </h1>
-  </div>
   <div class="field">
     <div>
       <%= f.select :category_id, options_from_collection_for_select(@categories, :id, :name) %>
     </div>
   </div>
-  <br/>
+  <div class="page-header">
+    <h1>
+      <%= f.text_field :name, :class => ".title span11", :placeholder => "name of the buzz you want to share" %>
+    </h1>
+  </div>
+
   <div class="field">
     <div>
-      <%= f.text_area :content, :class => 'text_area' %>
+      <%= f.text_area :content, :class => 'text_area span11', :placeholder => "You can do a breif introduciton of this buzz, share your feeling, try to persuade your colleagues by showing the shining side of this buzz. You can use MarkDown, that's our favorite markup." %>
     </div>
   </div>
   <div class="field">
@@ -21,10 +21,12 @@
     <% end %>
   </div>
 
-  <p><%= link_to_add_fields "Add Link", f, :links %></p>
+  <div class="field">
+    <%= link_to_add_fields raw("<i class=\"icon-plus\"></i> Add a Link"), f, :links %>
+  </div>
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
+  <div class="field">
+    <%= f.submit nil, :class => 'btn btn-success' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 nodes_path, :class => 'btn' %>
   </div>

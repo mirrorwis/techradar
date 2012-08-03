@@ -1,14 +1,8 @@
- <div class="fields">
-  <div class="field">
-    <div>
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-    </div>
+ <div class="link-fileds form-inline">
+  <div class="input-prepend">
+    <span class="add-on">What's this?</span><%= f.text_field :title %>
   </div>
-  <div class="field">
-    <div>
-      <%= f.label :url %>
-      <%= f.text_field :url %>
-    </div>
+  <div class="input-prepend">
+    <span class="add-on">URL</span><%= f.text_field :url %>
   </div>
 </div>
