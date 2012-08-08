@@ -1,6 +1,7 @@
 
 Techradar::Application.routes.draw do
   resources :nodes
+  match "/radar" => "nodes#radar"
 
   root :to => "nodes#index"
 

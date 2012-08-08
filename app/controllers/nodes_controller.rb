@@ -1,5 +1,20 @@
 class NodesController < ApplicationController
 
+  def radar
+    @nodes = Node.all
+    json = []
+    @nodes.each do |node|
+      json << {
+        :url => node_url(node),
+        :name => node.name,
+        :hottness => node.hotness.to_i,
+        :category => node.category.name
+    }
+    @nodes_literal = json.to_json
+  end
+
+  end
+
   def index
     @nodes = Node.all
     respond_to do |format|

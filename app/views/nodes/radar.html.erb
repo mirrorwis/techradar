@@ -1,0 +1,10 @@
+<div id="canvas">
+  <div class="l0"></div><div class="l1"></div><div class="l2"></div><div class="l3"></div><div class="l4"></div>
+
+</div>
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    window.nodes_json = <%= raw @nodes_literal %>;
+    TechRadar.drawRadar(window.nodes_json);
+  });
+</script>

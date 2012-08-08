@@ -17,10 +17,13 @@
   <%= markdown @node.content %>
 </div>
 
+<hr />
 <div class="field">
+  <ul class="links">
   <% @node.links.each do |link| %>
-    <a href="<%= link.url %>" target="_blank"><%= link.title %></a>
+    <li class="link"><a href="<%= link.url %>" target="_blank"><%= link.title %></a></li>
   <% end %>
+  </ul>
 </div>
 
 <div class="field">

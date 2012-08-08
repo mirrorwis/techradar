@@ -13,6 +13,80 @@
   margin: 10px 0;
 }
 
-.tag-not-exist {
-  font-color: red;
+#canvas {
+  width: 600px;
+  height: 600px;
+  border: 1px solid black;
+  margin: 0;
+  position: relative;
+
+  div {
+    position: absolute;
+  }
+
+  .l0 {
+    top: 0;
+    left: 0;
+    background-color: #A5C8EB;
+    width: 600px;
+    height: 600px;
+    border-radius: 300px;
+  }
+
+  .l1 {
+    background-color: #E6D870;
+    width: 450px;
+    height: 450px;
+    top: 75px;
+    left: 75px;
+    border-radius: 225px;
+  }
+
+  .l2 {
+    background-color: #B3DD6A;
+    width: 300px;
+    height: 300px;
+    top: 150px;
+    left: 150px;
+    border-radius: 150px;
+  }
+
+  .l3 {
+    background-color: #D19F7D;
+    width: 150px;
+    height: 150px;
+    top: 225px;
+    left: 225px;
+    border-radius: 75px;
+  }
+
+  .l4 {
+    background-color: red;
+    width: 6px;
+    height: 6px;
+    top: 297px;
+    left: 297px;
+    border-radius: 3px;
+  }
+
+  .node {
+    position: absolute;
+    background-color: black;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    z-index: 1;
+    display: block;
+    // text-indent: 100%;
+    // white-space: nowrap;
+    // overflow: hidden;
+    margin: 0;
+
+    .node-name {
+      position: absolute;
+      left: 20px;
+      top: -2px;
+      color: black;
+    }
+  }
 }
